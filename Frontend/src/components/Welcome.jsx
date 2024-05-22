@@ -1,6 +1,7 @@
 import React from 'react'
 import sideimage from '../img/svg/img-dollar.svg'
 import banner from '../img/core-img/banner2.png'
+import { Link } from 'react-router-dom'
 
 function Welcome() {
   return (
@@ -41,10 +42,9 @@ function Welcome() {
               <a href="#" className="btn dream-btn green-btn mr-3">
                 Choose Template
               </a>
-              <a href="#" className="btn dream-btn green-btn">
-                {" "}
+              <Link to="/contact" className="btn dream-btn green-btn">
                 contact us
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
+const sendWelcomeEmail = require('../utils/email');
 
 const secret = process.env.JWT_SECRET;
 
@@ -26,6 +27,9 @@ router.post('/register', async (req, res) => {
 
     const user = new User({ name, email, password });
     await user.save();
+
+    // Send welcome email
+    sendWelcomeEmail(email, name);
 
     res.status(201).json({ message: 'User registered successfully' });
   } catch (err) {
