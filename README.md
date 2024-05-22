@@ -73,4 +73,5 @@ For questions or feedback, reach out to us:
 ## Acknowledgements
 
 - Thanks to all contributors who have helped improve this project.
-- Special thanks to [OpenAI](https://www.openai.com/) for their support and guidance.
+- AISSAM TAHIRI
+- Oluwademilade Abatan
