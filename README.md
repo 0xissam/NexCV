@@ -1,9 +1,6 @@
 <p align="center">
   <img src="https://github.com/0xissam/NexCV/blob/main/Frontend/src/img/logo.svg" alt="NexCV Logo" width="200"/>
 </p>
-
-# NexCV
-
 NexCV is a full-stack web application designed to help users create, customize, and download professional CVs effortlessly. The application provides a variety of templates and customization options to ensure each CV stands out.
 
 ## Table of Contents
