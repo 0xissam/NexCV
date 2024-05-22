@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="path/to/your/logo.png" alt="NexCV Logo" width="200"/>
+  <img src="https://github.com/0xissam/NexCV/blob/main/Frontend/src/img/logo.svg" alt="NexCV Logo" width="200"/>
 </p>
 
 # NexCV
