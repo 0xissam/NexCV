@@ -13,10 +13,9 @@ function Footer() {
             {/* Copywrite */}
             <div className="copywrite_text fadeInUp" data-wow-delay="0.2s">
               <div className="footer-logo">
-                <img src={logo} alt="logo" />
-                {/* <a href="#">
+                <a href="#">
                   <h3>NexCV</h3>
-                </a> */}
+                </a>
               </div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit
