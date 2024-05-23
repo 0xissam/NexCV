@@ -5,7 +5,6 @@ import { useDispatch } from 'react-redux';
 import { login } from '../features/User/user';
 import axios from 'axios';
 import toast from 'react-hot-toast';
-
 function Login() {
 
   const [email, setEmail] = useState(null);
@@ -17,10 +16,10 @@ function Login() {
     'email': email,
     'password': password
   }
-  
-  const handleSubmit =  async (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     const Proxy = "https://mycoreproxy-74d7d6780461.herokuapp.com/"
     try {
       const response = await axios.post(`${Proxy}https://nexcvapi-4800a18b462c.herokuapp.com/auth/login`, data)
@@ -29,6 +28,7 @@ function Login() {
     } catch (error) {
       console.log(error)
     }
+
 
   }
 

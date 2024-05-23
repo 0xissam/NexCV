@@ -16,9 +16,8 @@ function Signup() {
     'password': password,
     'confirmPassword': confirmPassword
   }
-
   const navigate = useNavigate()
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     const Proxy = "https://mycoreproxy-74d7d6780461.herokuapp.com/"
@@ -59,8 +58,8 @@ function Signup() {
             <div className="col-12 col-md-12">
               <div className="group">
                 <input type="password" value={password} onChange={e => setPassword(e.target.value)} name="password" id="name5" className='form-control' required placeholder='Password' />
-              </div>
-            </div>
+              </div >
+            </div >
             <div className="col-12 col-md-12">
               <div className="group">
                 <input type="password" value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} name="confirmPassword" id="name6" className='form-control' required placeholder='Confirm Password' />
@@ -76,8 +75,8 @@ function Signup() {
                 Do you have an account? <Link to={'/login'}>Login</Link>
               </p>
             </div>
-          </div>
-        </form>
+          </div >
+        </form >
         <div className="other-accounts text-center">
           <p className="w-text">Login with other account</p>
           <div className="footer-social-info">
@@ -99,7 +98,7 @@ function Signup() {
             </a>
           </div>
         </div>
-      </div>
+      </div >
     </>
 
   )
