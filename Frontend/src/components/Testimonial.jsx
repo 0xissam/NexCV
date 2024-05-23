@@ -31,7 +31,7 @@ function Testimonial() {
     </div>
   </div>
   <div className="cotainer-fluid">
-    <div className="row justify-content-center">
+    <div className="row justify-content-around align-items-center">
       <div className="col-12 col-md-10 col-xs-10 offset-xs-1">
         <div className="client_slides owl-carousel owl-loaded owl-drag">
           {/* Single Testimonial */}
@@ -46,7 +46,7 @@ function Testimonial() {
               //   width: 4743
               // }}
             >
-              <div className="owl-item cloned" style={{ width: 527 }}>
+              <div className="owl-item cloned" style={{ width: 350 }}>
                 <div className="single-testimonial text-center">
                   <div className="icon_wrapper">
                     <i className="fa fa-quote-right" />
@@ -72,7 +72,7 @@ function Testimonial() {
                   </div>
                 </div>
               </div>
-              <div className="owl-item cloned" style={{ width: 527 }}>
+              <div className="owl-item cloned" style={{ width: 420 }}>
                 <div className="single-testimonial text-center">
                   <div className="icon_wrapper">
                     <i className="fa fa-quote-right" />
@@ -98,7 +98,7 @@ function Testimonial() {
                   </div>
                 </div>
               </div>
-              <div className="owl-item cloned" style={{ width: 527 }}>
+              <div className="owl-item cloned" style={{ width: 350 }}>
                 <div className="single-testimonial text-center">
                   <div className="icon_wrapper">
                     <i className="fa fa-quote-right" />
