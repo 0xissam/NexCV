@@ -13,7 +13,7 @@ function Adv() {
         </h2>
       </div>
       <div className="col-lg-3 col-lg-offset-1 col-md-3 col-sm-12 text-center">
-        <a className="button mt-s" href="contact-us.html">
+        <a className="button mt-s" href="#">
           Send a Request
         </a>
       </div>
