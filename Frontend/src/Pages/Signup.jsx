@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import PagesStyle from '../components/PagesStyle'
 import axios from 'axios'
-import toast from 'react-hot-toast'
+import { toast, Toaster } from 'react-hot-toast';
 
 function Signup() {
   const [email, setEmail] = useState(null)
@@ -16,10 +16,27 @@ function Signup() {
     'password': password,
     'confirmPassword': confirmPassword
   }
+
+
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+
+    if (name == null) {
+      toast.error('Provide your Name')
+    } else if (email == null) {
+      toast.error('Provided your Email Address')
+    } else if (password == null) {
+      toast.error('Provided Your Password')
+    } else if (confirmPassword == null) {
+      toast.error('Confirm Your password')
+    } else if (password !== confirmPassword) {
+      toast.error('Passwords does not match')
+    } else {
+      toast.success('Account Created Successfully')
+    }
+
     const Proxy = "https://mycoreproxy-74d7d6780461.herokuapp.com/"
 
     try {
@@ -35,7 +52,8 @@ function Signup() {
   }
   return (
     <>
-      <PagesStyle title="SignUP" main="Home" />
+      <Toaster />
+      <PagesStyle title="Sign Up" main="Home" />
       <div style={{
         maxWidth: '600px',
         margin: '0 auto',
@@ -47,22 +65,22 @@ function Signup() {
           <div className="row">
             <div className="col-12 col-md-12">
               <div className="group">
-                <input type="text" value={name} onChange={(e) => setName(e.target.value)} name="name" id="name3" className='form-control' required placeholder='Name' />
+                <input type="text" value={name} onChange={(e) => setName(e.target.value)} name="name" id="name3" className='form-control' placeholder='Name' />
               </div>
             </div>
             <div className="col-12 col-md-12">
               <div className="group">
-                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} name="email" id="name4" className='form-control' required placeholder='Email' />
+                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} name="email" id="name4" className='form-control' placeholder='Email' />
               </div>
             </div>
             <div className="col-12 col-md-12">
               <div className="group">
-                <input type="password" value={password} onChange={e => setPassword(e.target.value)} name="password" id="name5" className='form-control' required placeholder='Password' />
+                <input type="password" value={password} onChange={e => setPassword(e.target.value)} name="password" id="name5" className='form-control' placeholder='Password' />
               </div >
             </div >
             <div className="col-12 col-md-12">
               <div className="group">
-                <input type="password" value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} name="confirmPassword" id="name6" className='form-control' required placeholder='Confirm Password' />
+                <input type="password" value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} name="confirmPassword" id="name6" className='form-control' placeholder='Confirm Password' />
               </div>
             </div>
             <div className="col-12 col-sm-5 text-left ">

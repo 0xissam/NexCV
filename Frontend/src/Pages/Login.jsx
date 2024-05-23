@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 import { login } from '../features/User/user';
 import axios from 'axios';
-import toast from 'react-hot-toast';
+import { toast, Toaster } from 'react-hot-toast';
 function Login() {
 
   const [email, setEmail] = useState(null);
@@ -20,6 +20,14 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (email == null) {
+      toast.error('Provide your email to login')
+    } else if (password == null) {
+      toast.error('Provide your password to login')
+    } else{
+      toast.success('login successful')
+    }
+
     const Proxy = "https://mycoreproxy-74d7d6780461.herokuapp.com/"
     try {
       const response = await axios.post(`${Proxy}https://nexcvapi-4800a18b462c.herokuapp.com/auth/login`, data)
@@ -34,6 +42,7 @@ function Login() {
 
   return (
     <>
+      <Toaster />
       <PagesStyle title="Login" main="Home" />
       {/* Login popup form  */}
       <div style={{
