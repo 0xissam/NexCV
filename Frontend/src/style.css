@@ -3350,7 +3350,7 @@ p.artficial:before{
     height: 45px;
     border: none;
     background-color: transparent;
-    color: #fff;
+    /* color: #fff; */
     border-radius: 0;
     border-bottom: 2px solid rgba(68, 68, 68, 0.2);
 }
