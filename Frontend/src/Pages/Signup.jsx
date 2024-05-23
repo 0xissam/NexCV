@@ -1,11 +1,42 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import PagesStyle from '../components/PagesStyle'
+import axios from 'axios'
+import toast from 'react-hot-toast'
 
 function Signup() {
+  const [email, setEmail] = useState(null)
+  const [password, setPassword] = useState(null)
+  const [name, setName] = useState(null)
+  const [confirmPassword, setConfirmPassword] = useState(null);
+
+  const data = {
+    'name': name,
+    'email': email,
+    'password': password,
+    'confirmPassword': confirmPassword
+  }
+
+  const navigate = useNavigate()
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const Proxy = "https://mycoreproxy-74d7d6780461.herokuapp.com/"
+
+    try {
+      const response = await axios.post(`${Proxy}https://nexcvapi-4800a18b462c.herokuapp.com/auth/register/`, data)
+      console.log(response.data);
+      if (response.data) {
+        toast.success(response.data.message)
+      }
+      navigate('/login');
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
   return (
     <>
-    <PagesStyle title="SignUP" main="Home"/>
+      <PagesStyle title="SignUP" main="Home" />
       <div style={{
         maxWidth: '600px',
         margin: '0 auto',
@@ -13,26 +44,26 @@ function Signup() {
         <div className="top-form-header mb-4 text-center">
           <h4>Create An Account</h4>
         </div>
-        <form action="#" method="post" noValidate="">
+        <form onSubmit={handleSubmit} method="post" noValidate="">
           <div className="row">
             <div className="col-12 col-md-12">
               <div className="group">
-                <input type="text" name="name" id="name3" className='form-control' required placeholder='Name' />
+                <input type="text" value={name} onChange={(e) => setName(e.target.value)} name="name" id="name3" className='form-control' required placeholder='Name' />
               </div>
             </div>
             <div className="col-12 col-md-12">
               <div className="group">
-                <input type="email" name="email" id="name4" className='form-control' required placeholder='Email'/>
+                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} name="email" id="name4" className='form-control' required placeholder='Email' />
               </div>
             </div>
             <div className="col-12 col-md-12">
               <div className="group">
-                <input type="password" name="name" id="name5" className='form-control' required placeholder='Password'/>
+                <input type="password" value={password} onChange={e => setPassword(e.target.value)} name="password" id="name5" className='form-control' required placeholder='Password' />
               </div>
             </div>
             <div className="col-12 col-md-12">
               <div className="group">
-                <input type="password" name="name" id="name6" className='form-control' required placeholder='Confirm Password'/>
+                <input type="password" value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} name="confirmPassword" id="name6" className='form-control' required placeholder='Confirm Password' />
               </div>
             </div>
             <div className="col-12 col-sm-5 text-left ">
