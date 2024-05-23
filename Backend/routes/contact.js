@@ -7,7 +7,7 @@ dotenv.config();
 
 // Create transporter using your email service
 const transporter = nodemailer.createTransport({
-  service: 'gmail', // Use your email service provider
+  service: 'outlook', // Use your email service provider
   auth: {
     user: process.env.EMAIL_USER, // Your email address
     pass: process.env.EMAIL_PASS  // Your email password
@@ -15,7 +15,7 @@ const transporter = nodemailer.createTransport({
 });
 
 // Route to handle contact form submission
-router.post('/contact', (req, res) => {
+router.post('/', (req, res) => {
   const { name, email, subject, message } = req.body;
 
   if (!name || !email || !subject || !message) {
@@ -23,8 +23,9 @@ router.post('/contact', (req, res) => {
   }
 
   const mailOptions = {
-    from: email,
-    to: process.env.EMAIL_USER, // Send to your email
+    from: process.env.EMAIL_USER, // Authenticated email address
+    replyTo: email, // The email of the user who filled the contact form
+    to: process.env.EMAIL_USER, // Your email address where you want to receive the contact form submissions
     subject: `Contact Form Submission: ${subject}`,
     text: `You have a new contact form submission from ${name} (${email}):\n\n${message}`
   };

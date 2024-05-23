@@ -5,7 +5,7 @@ dotenv.config();
 
 // Create transporter using your email service
 const transporter = nodemailer.createTransport({
-  service: 'gmail', // Use your email service provider
+  service: 'outlook', // Use your email service provider
   auth: {
     user: process.env.EMAIL_USER, // Your email address
     pass: process.env.EMAIL_PASS  // Your email password
@@ -17,8 +17,8 @@ const sendWelcomeEmail = (email, name) => {
   const mailOptions = {
     from: process.env.EMAIL_USER,
     to: email,
-    subject: 'Welcome to CVBuilder!',
-    text: `Hi ${name},\n\nWelcome to CVBuilder! We are excited to have you on board.\n\nBest regards,\nThe CVBuilder Team`
+    subject: 'Welcome to NEXCV!',
+    text: `Hi ${name},\n\nWelcome to NEXCV! We are excited to have you on board.\n\nBest regards,\nThe NEXCV Team`
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
