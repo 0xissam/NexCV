@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
-// const sendWelcomeEmail = require('../utils/email');
 const sendWelcomeEmail = require('../utils/sendWelcomeEmail');
 
 const secret = process.env.JWT_SECRET;
@@ -38,7 +37,6 @@ router.post('/register', async (req, res) => {
   }
 });
 
-
 // Login a user
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
@@ -55,7 +53,16 @@ router.post('/login', async (req, res) => {
     }
 
     const token = jwt.sign({ id: user._id }, secret, { expiresIn: '1h' });
-    res.json({ token });
+
+    // Include user details in the response
+    res.json({ 
+      token, 
+      user: {
+        id: user._id,
+        name: user.name,
+        email: user.email
+      }
+    });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

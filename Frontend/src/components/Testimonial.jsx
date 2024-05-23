@@ -98,6 +98,32 @@ function Testimonial() {
                   </div>
                 </div>
               </div>
+              <div className="owl-item cloned" style={{ width: 527 }}>
+                <div className="single-testimonial text-center">
+                  <div className="icon_wrapper">
+                    <i className="fa fa-quote-right" />
+                  </div>
+                  {/* Testimonial Image */}
+                  <div className="testimonial_image">
+                    <img src={theardimg} alt="" />
+                  </div>
+                  {/* Testimonial Feedback Text  */}
+                  <div className="testimonial-description">
+                    <div className="testimonial_text">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Error nostrum adipisci porro quisquam. Rem, earum,
+                        tenetur? Architecto et, earum repudiandae.
+                      </p>
+                    </div>
+                    {/* Admin Text */}
+                    <div className="admin_text">
+                      <h5>Ajoy Das</h5>
+                      <p>One of our Clients</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
               {/* <div className="owl-item cloned" style={{ width: 527 }}>
                 <div className="single-testimonial text-center">
                   <div className="icon_wrapper">
