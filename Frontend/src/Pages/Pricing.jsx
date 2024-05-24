@@ -1,6 +1,7 @@
 import React from 'react'
 import PagesStyle from '../components/PagesStyle'
 import Adv from '../components/Adv'
+import { Link } from 'react-router-dom'
 
 function Pricing() {
     return (
@@ -47,8 +48,8 @@ function Pricing() {
                                     <p style={{
                                         color: 'black'
                                     }}>You will be billed per month, and get unlimited access to all resume Templates and new added ones</p>
-
-                                    <a className='button mt-s' href='contact-us.html'>Get Started</a>
+                                    
+                                    <Link className='button mt-s' to='/contact'>Get Started</Link>
                                 </div>
                             </div>
                         </div>
@@ -64,7 +65,7 @@ function Pricing() {
                                         color: 'black'
                                     }}>You will be billed per Year, and get unlimited access to all resume Templates and new added ones</p>
 
-                                    <a className='button mt-s' href='contact-us.html'>Get Started</a>
+                                    <Link className='button mt-s' to='/contact'>Get Started</Link>
                                 </div>
                             </div>
                         </div>
