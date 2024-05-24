@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { logout } from '../../features/User/user';
 import { Toaster } from 'react-hot-toast';
 
@@ -27,21 +27,21 @@ function DashboardLayout() {
                     </div>
                     <ul id="sidebar_menu">
                         <li>
-                            <a className="has-arrow" href="#" aria-expanded="false">
+                            <Link className="has-arrow" to="/dashboard" aria-expanded="false">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
                                     <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
                                 </svg>
                                 <span>Create Forms</span>
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a className="has-arrow" href="#" aria-expanded="false">
+                            <Link className="has-arrow" to="/dashboard/profile" aria-expanded="false">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                                     <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
                                     <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
                                 </svg>
                                 <span>Profile</span>
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </nav>
@@ -84,8 +84,8 @@ function DashboardLayout() {
                                                     <p>Welcome User!</p>
                                                     <h5>{user.name}</h5>
                                                     <div class="profile_info_details">
-                                                        <a href="#">My Profile <i class="ti-user"></i></a>
-                                                        <a href="#">Settings <i class="ti-settings"></i></a>
+                                                        <Link to="/dashboard">Create CV<i class="ti-user"></i></Link>
+                                                        <Link to="/dashboard/profile">My Profile <i class="ti-user"></i></Link>
                                                         <button onClick={handleClick} className='btn btn-primary'>Log Out <i class="ti-shift-left"></i></button>
                                                     </div>
                                                 </div>
