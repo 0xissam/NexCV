@@ -38,12 +38,12 @@ function Login() {
     try {
       const response = await axios.post(`${Proxy}https://nexcvapi-4800a18b462c.herokuapp.com/auth/login`, data)
       dispatch(login(response.data))
+      if (response.data) {
+        toast.success('Login Successful');
+      }
       setTimeout(() => {
-        if (response.data) {
-          toast.success('Login Successful');
-        }
+        navigate('/dashboard');
       }, 3000);
-      navigate('/dashboard');
     } catch (error) {
       if (error.response && error.response.data && error.response.data.message) {
         setError(error.response.data.message);

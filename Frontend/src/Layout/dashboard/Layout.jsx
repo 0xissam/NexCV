@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { logout } from '../../features/User/user';
+import { Toaster } from 'react-hot-toast';
 
 function DashboardLayout() {
     const user = useSelector((state) => state.user.value.user)
