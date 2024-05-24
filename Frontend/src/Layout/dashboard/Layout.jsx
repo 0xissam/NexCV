@@ -5,11 +5,14 @@ import { logout } from '../../features/User/user';
 import { Toaster } from 'react-hot-toast';
 
 function DashboardLayout() {
-    const user = useSelector((state) => state.user.value.user)
+    const userStorage = localStorage.getItem('user');
+    const localUser = JSON.parse(userStorage);
+    const user = useSelector((state) => state.user.value ? state.user.value : null) ?? localUser ? localUser.token : null;
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const handleClick = () => {
         dispatch(logout())
+        localStorage.removeItem('user')
         return navigate("/login")
     }
     const date = new Date();
@@ -64,7 +67,7 @@ function DashboardLayout() {
                                         </div>
                                         <div class="serach_field-area">
                                             <div class="search_inner">
-                                                <h3>Welcome, {user.name}</h3>
+                                                <h3>Welcome, {user.name ?? localUser.user.name}</h3>
                                             </div>
                                         </div>
                                         <div class="header_right d-flex justify-content-between align-items-center">
@@ -82,7 +85,7 @@ function DashboardLayout() {
                                                 </svg>
                                                 <div class="profile_info_iner">
                                                     <p>Welcome User!</p>
-                                                    <h5>{user.name}</h5>
+                                                    <h5>{user.name ?? localUser.user.name}</h5>
                                                     <div class="profile_info_details">
                                                         <Link to="/dashboard">Create CV<i class="ti-user"></i></Link>
                                                         <Link to="/dashboard/profile">My Profile <i class="ti-user"></i></Link>

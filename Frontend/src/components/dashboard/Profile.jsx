@@ -3,7 +3,9 @@ import '../../style1.css'
 import { useSelector } from 'react-redux';
 
 function Profile() {
-    const user = useSelector((state) => state.user.value.user)
+    const userStorage = localStorage.getItem('user');
+    const localUser = JSON.parse(userStorage);
+    const user = useSelector((state) => state.user.value ? state.user.value : null) ?? localUser ? localUser.token : null;
 
     return (
         <>
@@ -20,8 +22,8 @@ function Profile() {
                                 </svg>
                             </div>
                             <div>
-                                <h5>{user.name}</h5>
-                                <p className="lead">{user.email}</p>
+                                <h5>{user.name ?? localUser.user.name}</h5>
+                                <p className="lead">{user.email ?? localUser.user.email}</p>
                             </div>
                         </div>
                     </div>

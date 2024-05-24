@@ -38,6 +38,7 @@ function Login() {
     try {
       const response = await axios.post(`${Proxy}https://nexcvapi-4800a18b462c.herokuapp.com/auth/login`, data)
       dispatch(login(response.data))
+      localStorage.setItem('user', JSON.stringify(response.data));
       if (response.data) {
         toast.success('Login Successful');
       }
