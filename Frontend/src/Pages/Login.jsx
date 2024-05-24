@@ -43,7 +43,7 @@ function Login() {
       }
       setTimeout(() => {
         navigate('/dashboard');
-      }, 3000);
+      }, 1000);
     } catch (error) {
       if (error.response && error.response.data && error.response.data.message) {
         setError(error.response.data.message);
