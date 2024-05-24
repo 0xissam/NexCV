@@ -21,7 +21,11 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!email) {
+    if (!email && !password) {
+      toast.error('Provide all the required Information');
+      return;
+    }
+    else if (!email) {
       toast.error('Provide your email to login');
       return;
     } else if (!password) {
