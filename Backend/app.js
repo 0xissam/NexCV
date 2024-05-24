@@ -23,7 +23,7 @@ app.use('/auth', authRouter);
 app.use('/contact', contactRouter);
 
 // Example of a protected route
-app.get('/protected', auth, (req, res) => {
+app.get('/dashboard', auth, (req, res) => {
   res.json({ message: 'This is a protected route', user: req.user });
 });
 
