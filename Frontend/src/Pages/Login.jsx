@@ -9,6 +9,7 @@ function Login() {
 
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
+  const [error, setError] = useState(null);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -20,24 +21,38 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (email == null) {
-      toast.error('Provide your email to login')
-    } else if (password == null) {
-      toast.error('Provide your password to login')
-    } else{
-      toast.success('login successful')
+    if (!email && !password) {
+      toast.error('Provide all the required Information');
+      return;
     }
+    else if (!email) {
+      toast.error('Provide your email to login');
+      return;
+    } else if (!password) {
+      toast.error('Provide your password to login');
+      return;
+    }
+
 
     const Proxy = "https://mycoreproxy-74d7d6780461.herokuapp.com/"
     try {
       const response = await axios.post(`${Proxy}https://nexcvapi-4800a18b462c.herokuapp.com/auth/login`, data)
       dispatch(login(response.data))
-      navigate('/dashboard');
+      if (response.data) {
+        toast.success('Login Successful');
+      }
+      setTimeout(() => {
+        navigate('/dashboard');
+      }, 1000);
     } catch (error) {
-      console.log(error)
+      if (error.response && error.response.data && error.response.data.message) {
+        setError(error.response.data.message);
+        toast.error(error.response.data.message);
+      } else {
+        console.error(error);
+        toast.error('An unexpected error occurred. Please try again later.');
+      }
     }
-
-
   }
 
   return (

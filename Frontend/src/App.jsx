@@ -8,6 +8,7 @@ import Login from './Pages/Login';
 import Signup from './Pages/Signup';
 import DashboardLayout from './Layout/dashboard/Layout';
 import DashboardHome from './components/dashboard/Home';
+import Profile from './components/dashboard/Profile';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         </Route>
           <Route path='/dashboard' element={<DashboardLayout />} >
             <Route index element={<DashboardHome />} />
+            <Route path='profile' element={<Profile />} />
           </Route>
       </Routes>
 
