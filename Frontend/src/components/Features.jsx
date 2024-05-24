@@ -148,6 +148,7 @@ function Features() {
               <img src={sixthimg} alt="" />
             </div>
             <h6>Fast Easy CV and Resume Formatting</h6>
+            <br/>
             <p style={{
               color: 'black'
             }}>
