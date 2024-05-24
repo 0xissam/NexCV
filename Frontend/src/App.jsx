@@ -1,5 +1,4 @@
 import { Route, Routes, useLocation } from 'react-router-dom'
-import { Toaster } from 'react-hot-toast';
 import Layout from './Layout/Layout'
 import Home from './Pages/Home'
 import Aboutus from './Pages/Aboutus';
