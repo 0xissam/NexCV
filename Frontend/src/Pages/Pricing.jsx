@@ -19,8 +19,10 @@ function Pricing() {
                                 </div>
                                 <h4>Our Pricing</h4>
                                 <p style={{
-                                    color: 'black'
-                                }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at dictum risus, non suscipit arcu. Quisque aliquam posuere tortor, sit amet convallis nunc scelerisque in.</p>
+                                    color: 'black',
+                                    marginBottom: '30px'
+                                }}>We offer competitive pricing plans designed to fit your budget and needs. Whether you're a job seeker looking to create a single standout resume or a recruiter seeking to streamline your hiring process, we have a pricing option for you.
+                                </p>
 
                                 <div className="free-7">
                                     <span>Lets Build CV</span>

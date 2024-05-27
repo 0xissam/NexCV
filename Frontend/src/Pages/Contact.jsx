@@ -47,7 +47,7 @@ function Contact() {
                                     <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                                 </div>
                                 <h2 className="wow fadeInUp" data-wow-delay="0.3s">Contact With Us</h2>
-                                <p className="wow fadeInUp" style={{ color: 'black' }} data-wow-delay="0.4s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis accumsan nisi Ut ut felis congue nisl hendrerit commodo.</p>
+                                <p className="wow fadeInUp" style={{ color: 'black' }} data-wow-delay="0.4s">We're here to assist you every step of the way. Whether you have questions about our services, need help with your account</p>
                             </div>
                         </div>
                     </div>
