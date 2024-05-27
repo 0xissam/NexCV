@@ -1,5 +1,6 @@
 import React from 'react'
 import fimg from '../img/core-img/custom.png'
+import { Link } from 'react-router-dom'
 
 function Adv() {
   return (
@@ -13,9 +14,9 @@ function Adv() {
         </h2>
       </div>
       <div className="col-lg-3 col-lg-offset-1 col-md-3 col-sm-12 text-center">
-        <a className="button mt-s" href="#">
+        <Link className="button mt-s" to="/contact">
           Send a Request
-        </a>
+        </Link>
       </div>
     </div>
   </div>

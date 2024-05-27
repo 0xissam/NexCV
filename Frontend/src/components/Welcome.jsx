@@ -39,9 +39,9 @@ function Welcome() {
               the perfect job-ready resume.
             </p>
             <div className="dream-btn-group wow fadeInUp" data-wow-delay="0.4s">
-              <a href="#" className="btn dream-btn green-btn mr-3">
+              <Link to="/login" className="btn dream-btn green-btn mr-3">
                 Choose Template
-              </a>
+              </Link>
               <Link to="/contact" className="btn dream-btn green-btn">
                 contact us
               </Link>

@@ -21,9 +21,9 @@ function DashboardLayout() {
             <div className="crm_body_bg">
                 <nav className="sidebar bg-white">
                     <div className="logo d-flex justify-content-between">
-                        <a href="/">
+                        <Link to="/">
                             <h3>Nex<span className='text-primary'>CV</span></h3>
-                        </a>
+                        </Link>
                         <div className="sidebar_close_icon d-lg-none">
                             <i className="ti-close"></i>
                         </div>

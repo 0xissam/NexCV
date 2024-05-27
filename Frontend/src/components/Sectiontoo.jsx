@@ -2,6 +2,7 @@ import React from 'react'
 import firstimg from '../img/icons/d1.png'
 import secondimg from '../img/icons/d2.png'
 import theardimg from '../img/icons/d3.png'
+import { Link } from 'react-router-dom'
 
 function Sectiontoo() {
   return (
@@ -83,6 +84,7 @@ function Sectiontoo() {
         </div>
       </section>
     </>
+
 
   )
 }

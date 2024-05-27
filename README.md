@@ -57,7 +57,6 @@ Contributions are welcome! Please follow these steps to contribute:
 5. Push to the branch (`git push origin feature/YourFeature`).
 6. Open a Pull Request.
 
-Ensure your code adheres to the project's coding standards.
 
 ## License
 
@@ -68,7 +67,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 For questions or feedback, reach out to us:
 
 - **Email**: support@nexcv.com
-- **GitHub Issues**: [https://github.com/your-username/nexcv/issues](https://github.com/your-username/nexcv/issues)
 
 ## Acknowledgements
 
