@@ -23,8 +23,7 @@ function Testimonial() {
                 </div>
                 <h2>Your Success, Our Inspiration</h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis
-                  accumsan nisi Ut ut felis congue nisl hendrerit commodo.{" "}
+                  From crafting standout resumes to navigating the job search process, we're here to support you every step of the way.{" "}
                 </p>
               </div>
             </div>
@@ -52,9 +51,7 @@ function Testimonial() {
                         <div className="testimonial-description">
                           <div className="testimonial_text">
                             <p>
-                              Lorem ipsum dolor sit amet, consectetur adipisicing
-                              elit. Error nostrum adipisci porro quisquam. Rem, earum,
-                              tenetur? Architecto et, earum repudiandae.
+                            Using NexCV has been a game-changer for me. The seamless interface and insightful guidance have transformed how I approach resume building and job applications. Thanks to NexCv, I've experienced a new level of professionalism in my job search journey. Highly recommended!
                             </p>
                           </div>
                           {/* Admin Text */}
@@ -78,9 +75,7 @@ function Testimonial() {
                         <div className="testimonial-description">
                           <div className="testimonial_text">
                             <p>
-                              Lorem ipsum dolor sit amet, consectetur adipisicing
-                              elit. Error nostrum adipisci porro quisquam. Rem, earum,
-                              tenetur? Architecto et, earum repudiandae.
+                            My experience with NexCv has been nothing short of amazing. The efficient tools and resources provided have made the daunting task of resume building a breeze. The impact of using their templates was immediate—I received more interview callbacks than ever before.
                             </p>
                           </div>
                           {/* Admin Text */}
@@ -104,9 +99,7 @@ function Testimonial() {
                         <div className="testimonial-description">
                           <div className="testimonial_text">
                             <p>
-                              Lorem ipsum dolor sit amet, consectetur adipisicing
-                              elit. Error nostrum adipisci porro quisquam. Rem, earum,
-                              tenetur? Architecto et, earum repudiandae.
+                            Choosing NexCv was a gratifying decision in my career journey. The insights and support offered have been invaluable. The professionalism of the templates provided helped me present my skills and experience in a compelling way. With NexCv, I felt empowered and confident.
                             </p>
                           </div>
                           {/* Admin Text */}
