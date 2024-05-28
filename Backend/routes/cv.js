@@ -10,11 +10,12 @@ const bodyParser = require('body-parser');
 // Middleware to parse JSON bodies
 router.use(bodyParser.json());
 
-const TEMPLATE_PATH = path.join(__dirname, '../uploads/template2.docx');
 const OUTPUT_DOCX_PATH = path.join(__dirname, '../uploads/modified_template.docx');
 
 router.post('/generate-pdf', async (req, res) => {
     const formData = req.body;
+
+    const TEMPLATE_PATH = path.join(__dirname, `../uploads/${formData.template}.docx`);
 
     try {
         // Load the existing .docx template file
@@ -52,6 +53,12 @@ router.post('/generate-pdf', async (req, res) => {
             description: exp.description || '',
         }));
 
+        const languages = formData.languages || [];
+        const languageData = languages.map(lang => ({
+            name: lang.name || '',
+            proficiency: lang.proficiency || '',
+        }));
+
         doc.setData({
             fullName: formData.fullName || '',
             jobTitle: formData.jobTitle || '',
@@ -63,6 +70,7 @@ router.post('/generate-pdf', async (req, res) => {
             education: educationData,
             skills: skillData,
             experience: experienceData,
+            languages: languageData,
             socialName: formData.socialName || '',
             socialLink: formData.socialLink || '',
         });
@@ -80,10 +88,10 @@ router.post('/generate-pdf', async (req, res) => {
         const readStream = fs.createReadStream(OUTPUT_DOCX_PATH);
         res.setHeader('Content-Disposition', 'attachment; filename="modified_template.docx"');
         res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document');
-        readStream.pipe(res);
+        await readStream.pipe(res);
 
         // Clean up: remove the generated DOCX file
-        await fsp.unlink(OUTPUT_DOCX_PATH);
+        // await fsp.unlink(OUTPUT_DOCX_PATH);
 
     } catch (error) {
         console.error('Error generating DOCX:', error);
