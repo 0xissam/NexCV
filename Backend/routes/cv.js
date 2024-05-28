@@ -31,27 +31,40 @@ router.post('/generate-pdf', async (req, res) => {
         });
 
         // Replace placeholders with form data
+        const skills = formData.skills || [];
+        const skillData = skills.map(skill => ({ name: skill.name || '', proficiency: skill.proficiency || '' }));
+
+        const education = formData.education || [];
+        const educationData = education.map(edu => ({
+            field: edu.field || '',
+            degree: edu.degree || '',
+            school: edu.school || '',
+            from: edu.from || '',
+            to: edu.to || '',
+        }));
+
+        const experience = formData.experience || [];
+        const experienceData = experience.map(exp => ({
+            title: exp.title || '',
+            company: exp.company || '',
+            from: exp.from || '',
+            to: exp.to || '',
+            description: exp.description || '',
+        }));
+
         doc.setData({
-            phone: formData.phone || '',
-            email: formData.email || '',
             fullName: formData.fullName || '',
+            jobTitle: formData.jobTitle || '',
+            address: formData.address || '',
+            email: formData.email || '',
             webLink: formData.webLink || '',
-            educationDegree: formData.educationDegree || '',
-            educationField: formData.educationField || '',
-            educationSchool: formData.educationSchool || '',
-            educationFrom: formData.educationFrom || '',
-            educationTo: formData.educationTo || '',
+            phone: formData.phone || '',
             bio: formData.bio || '',
-            skillName: formData.skillName || '',
+            education: educationData,
+            skills: skillData,
+            experience: experienceData,
             socialName: formData.socialName || '',
             socialLink: formData.socialLink || '',
-            skillProficiency: formData.skillProficiency || '',
-            experienceTitle: formData.experienceTitle || '',
-            experienceFrom: formData.experienceFrom || '',
-            experienceTo: formData.experienceTo || '',
-            experienceCompany: formData.experienceCompany || '',
-            experienceDescription: formData.experienceDescription || '',
-            // Add more replacements as needed
         });
 
         // Render the document (replace all occurrences of {placeholders})
