@@ -26,7 +26,7 @@ function Contact() {
         e.preventDefault();
         const Proxy = "https://mycoreproxy-74d7d6780461.herokuapp.com/"
         try {
-            const response = await axios.post(`${Proxy}https://nexcvapi-4800a18b462c.herokuapp.com/contact`, formData);
+            const response = await axios.post(`${Proxy}https://nexapi-2e84832bb07e.herokuapp.com/contact`, formData);
             toast.success(response.data.message);
             setFormData(initialFormData); // Reset the form inputs to initial state
         } catch (error) {

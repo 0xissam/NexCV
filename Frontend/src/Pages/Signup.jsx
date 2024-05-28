@@ -47,7 +47,7 @@ function Signup() {
     const Proxy = "https://mycoreproxy-74d7d6780461.herokuapp.com/"
 
     try {
-      const response = await axios.post(`${Proxy}https://nexcvapi-4800a18b462c.herokuapp.com/auth/register/`, data)
+      const response = await axios.post(`${Proxy}https://nexapi-2e84832bb07e.herokuapp.com/auth/register/`, data)
       console.log(response.data);
       if (response.data) {
         toast.success(response.data.message)
