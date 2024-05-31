@@ -87,9 +87,9 @@ function DashboardLayout() {
                                                     <p>Welcome User!</p>
                                                     <h5>{user.name ?? localUser.user.name}</h5>
                                                     <div class="profile_info_details">
-                                                        <Link to="/dashboard">Create CV<i class="ti-user"></i></Link>
-                                                        <Link to="/dashboard/profile">My Profile <i class="ti-user"></i></Link>
-                                                        <button onClick={handleClick} className='btn btn-primary'>Log Out <i class="ti-shift-left"></i></button>
+                                                        <Link to="/dashboard">Create CV<i class="fa-solid fa-plus"></i></Link>
+                                                        <Link to="/dashboard/profile">My Profile <i class="fa-solid fa-user"></i></Link>
+                                                        <button onClick={handleClick} className='btn btn-primary'>Log Out <i class="fas fa-sign-out"></i></button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -108,7 +108,7 @@ function DashboardLayout() {
                             <div className="row">
                                 <div className="col-lg-12 col-sm-12">
                                     <div className="footer_iner text-center">
-                                        <p>{date.getFullYear()} © Influence - Designed by<a href="#"> Dashboard</a></p>
+                                        <p>{date.getFullYear()} © Influence - Designed by<Link to="/"> NEXCV</Link></p>
                                     </div>
                                 </div>
                             </div>
