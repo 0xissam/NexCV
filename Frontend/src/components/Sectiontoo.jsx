@@ -75,9 +75,9 @@ function Sectiontoo() {
                 }}>
                   Crafting a professional resume is essential for advancing your career. At our platform, we prioritize your success by offering a seamless CV building experience. Our user-friendly interface empowers you to create standout resumes effortlessly, showcasing your skills and achievements effectively.
                 </p>
-                <a className="btn dream-btn mt-30" href="templates.html">
+                <Link className="btn dream-btn mt-30" to="/login">
                   lets build your cv
-                </a>
+                </Link>
               </div>
             </div>
           </div>

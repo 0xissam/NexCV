@@ -22,36 +22,16 @@ function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    if (!name && !email && !password && !confirmPassword) {
-      toast.error('Provide all the required information');
-      return;
-    } else if (name == null) {
-      toast.error('Provide your Name')
-      return;
-    } else if (email == null) {
-      toast.error('Provided your Email Address')
-      return;
-    } else if (password == null) {
-      toast.error('Provided Your Password')
-      return;
-    } else if (confirmPassword == null) {
-      toast.error('Confirm Your password')
-      return;
-    } else if (password !== confirmPassword) {
-      toast.error('Passwords does not match')
-      return;
-    } else {
-      toast.success('Account Created Successfully')
-    }
+    
 
     const Proxy = "https://mycoreproxy-74d7d6780461.herokuapp.com/"
 
     try {
       const response = await axios.post(`${Proxy}https://nexapi-2e84832bb07e.herokuapp.com/auth/register/`, data)
-      console.log(response.data);
-      if (response.data) {
-        toast.success(response.data.message)
-      }
+      // console.log(response.data);
+      // if (response.data) {
+      //   toast.success(response.data.message)
+      // }
       navigate('/login');
     } catch (error) {
       console.log(error.message);
